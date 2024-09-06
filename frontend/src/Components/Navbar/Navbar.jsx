@@ -25,7 +25,7 @@ const Navbar = () => {
             <li onClick={()=>{setMenu("kids")}}><Link style={{textDecoration: 'none',color: '#626262'}} to='/kids'><i class="fa-solid fa-user-astronaut"></i> Kids</Link>{menu==="kids"?<hr/>:<></>}</li>
         </ul>
         <div className="nav-login-cart">
-            <Link to='/login'><button>Login</button></Link>
+            <Link to='/login'><button className='loginBtn'>Login</button></Link>
             <Link to='/cart'><img src={cart_icon} alt=""/></Link>     
             <div className="nav-cart-count">0</div>
         </div>
