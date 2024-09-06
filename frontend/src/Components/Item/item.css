@@ -1,6 +1,10 @@
 .item{
     width: 350px;
 }
+.item img{
+    max-width: 100%;
+    overflow: hidden;
+}
 .item p{
     margin: 6px 0;
 }
