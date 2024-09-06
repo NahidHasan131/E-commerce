@@ -10,7 +10,7 @@
     flex-direction: column;
     justify-content: center;
     gap: 20px;
-    padding-left: 180px;
+    padding-left: 150px;
     line-height: 1.1;
 }
 .hero-left h2{
@@ -56,6 +56,10 @@
     justify-content: center;
 }
 
+.hero-right img{
+    width: 950px;
+    height: 800px;
+}
 
 
 

@@ -5,7 +5,7 @@ import Offers from '../Components/Offers/Offers'
 import NewCollections from '../Components/NewCollections/NewCollections'
 import NewsLetter from '../Components/NewsLetter/NewsLetter'
 
-const Shop = () => {
+const Home = () => {
   return (
     <div>
         <Hero/>
@@ -17,4 +17,4 @@ const Shop = () => {
   )
 }
 
-export default Shop
+export default Home
