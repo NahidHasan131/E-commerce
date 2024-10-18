@@ -2,9 +2,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
     height: 90vh;
-    margin-top: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 .popular h1{
     color: #171717;
@@ -24,11 +25,30 @@
 .popular-item{
     margin-top: 50px;
     display: flex;
-    gap: 30px;
+    gap: 25px;
 }
 
 
 
+
+/* Media Queries */
+@media(max-width: 1280px){
+    .popular{
+        height: 85vh;
+    }
+    .popular h1{
+
+    }
+}
+@media(max-width: 1024px){
+
+}
+@media(max-width:800px){
+    
+}
+@media(max-width:500px){
+
+}
 
 
 
