@@ -1,0 +1,103 @@
+.add-product{
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 600px;
+    padding: 30px 50px;
+    margin: 40px 40px 70px 40px;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    background: white;
+}
+.addproduct-itemfield{
+    width: 100%;
+    color: #333;
+    font-size: 16px;
+    margin-top: 25px;
+}
+.addproduct-itemfield input{
+    box-sizing: border-box;
+    width: 100%;
+    height: 50px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    padding-left: 15px;
+    border: 1px solid #c3c3c3;
+    outline: none;
+    color: #7b7b7b;
+    font-family: 'Poppins';
+    font-size: 14px;
+}
+.addproduct-itemfield p{
+    margin-bottom: 5px;
+}
+.addproduct-price{
+    display: flex;
+    gap: 40px;
+}
+.add-product-selector{
+    padding: 10px;
+    width: 230px;
+    height: 45px;
+    font-size: 14px;
+    color: #7b7b7b;
+    border: 1px solid #7b7b7b;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    background-color: white;
+}
+.addproduct-thumbnail-img{
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+.addproduct-btn{
+    width: 160px;
+    height: 50px;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    background-color: #ff4141;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 17px;
+    font-weight: 500;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+.addproduct-btn:hover{
+    background-color: #333;
+}
+
+@media(max-width: 800px){
+    .add-product{
+        width: auto;
+        padding: 30px;
+        margin: 50px;
+    }
+}
+
+
+
+
+
