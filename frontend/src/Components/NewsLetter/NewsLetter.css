@@ -8,18 +8,18 @@
     margin: auto;
     padding: 80 140px;
     margin-bottom: 100px;
-    background: linear-gradient(180deg, #fde1ff 0%, #e1ffea22 60%);
+    background: linear-gradient(180deg, #fcb7b7b0  0%, #e1ffea22 60%);
     gap: 25px;
 }
-
+/* #fde1ff  */
 .newsletter h1{
-    color: #454545;
+    color: #333;
     font-size: 52px;
     font-weight: 600;
 }
 
 .newsletter p{
-    color: #454545;
+    color: #333;
     font-size: 24px;
     margin-top: -10px;
    

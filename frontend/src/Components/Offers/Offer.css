@@ -5,9 +5,9 @@
     margin: auto;
     padding: 40px 100px;
     margin-bottom: 100px;
-    background: linear-gradient(180deg, #fde1ff 0%, #e1ffea22 60%);
+    background: linear-gradient(180deg, #f79999a1 0%, #e1ffea22 60%); 
 }
-
+/* #fde1ff */
 .offers-left{
     flex: 1;
     display: flex;
