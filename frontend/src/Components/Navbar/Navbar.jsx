@@ -28,11 +28,11 @@ const Navbar = () => {
         </Link>
         <img className='nav-dropdown' onClick={dropdown_toggle} src={nav_dropdown} alt="" />
         <ul ref={menuRef} className="nav-menu">
-            <li onClick={()=>{setMenu("home")}}><Link style={{textDecoration: 'none',color: '#626262'}} to='/'><i class="fa-solid fa-house"></i> Home</Link>{menu==="home"?<hr/>:<></>}</li>
-            <li onClick={()=>{setMenu("mens")}}><Link style={{textDecoration: 'none',color: '#626262'}} to='/mens'><i class="fa-solid fa-user-tie"></i> Men</Link>{menu==="mens"?<hr/>:<></>}</li>
-            <li onClick={()=>{setMenu("womens")}}><Link style={{textDecoration: 'none',color: '#626262'}} to='/womens'><i class="fa-solid fa-user-large"></i> Women</Link>{menu==="womens"?<hr/>:<></>}</li>
-            <li onClick={()=>{setMenu("kids")}}><Link style={{textDecoration: 'none',color: '#626262'}} to='/kids'><i class="fa-solid fa-user-astronaut"></i> Kids</Link>{menu==="kids"?<hr/>:<></>}</li>
-            <li onClick={()=>{setMenu("search")}}><span><i class="fa-solid fa-magnifying-glass"></i> Search</span></li>
+            <li onClick={()=>{setMenu("home")}}><Link style={{textDecoration: 'none',color: '#626262'}} to='/'><i className="fa-solid fa-house"></i> Home</Link>{menu==="home"?<hr/>:<></>}</li>
+            <li onClick={()=>{setMenu("mens")}}><Link style={{textDecoration: 'none',color: '#626262'}} to='/mens'><i className="fa-solid fa-user-tie"></i> Men</Link>{menu==="mens"?<hr/>:<></>}</li>
+            <li onClick={()=>{setMenu("womens")}}><Link style={{textDecoration: 'none',color: '#626262'}} to='/womens'><i className="fa-solid fa-user-large"></i> Women</Link>{menu==="womens"?<hr/>:<></>}</li>
+            <li onClick={()=>{setMenu("kids")}}><Link style={{textDecoration: 'none',color: '#626262'}} to='/kids'><i className="fa-solid fa-user-astronaut"></i> Kids</Link>{menu==="kids"?<hr/>:<></>}</li>
+            <li onClick={()=>{setMenu("search")}}><span><i className="fa-solid fa-magnifying-glass"></i> Search</span></li>
         </ul>
         <div className="nav-login-cart">
             {localStorage.getItem('auth-token')

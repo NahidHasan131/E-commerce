@@ -21,7 +21,7 @@ const LoginSignup = () => {
       method:'POST',
       headers:{
         Accept:'application/form-data',
-        'Content-Type':'appliction/json',
+        'Content-Type':'application/json',
       },
       body: JSON.stringify(formData),
     }).then((response)=> response.json()).then((data)=>responseData=data)
