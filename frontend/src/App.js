@@ -1,10 +1,10 @@
-
 import './App.css';
 import Navbar from './Components/Navbar/Navbar';
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import Home from './Pages/Home';
 import ShopCategory from './Pages/ShopCategory';
 import Product from './Pages/Product';
+import Search from './Pages/Search';
 import Cart from './Pages/Cart';
 import LoginSignup from './Pages/LoginSignup';
 import Footer from './Components/Footer/Footer';
@@ -26,6 +26,7 @@ function App() {
         <Route path='/product' element={<Product/>}>
           <Route path=':productId' element={<Product/>}/>
         </Route>
+        <Route path='/search' element={<Search/>}/>
         <Route path='/cart' element={<Cart/>}/>
         <Route path='/login' element={<LoginSignup/>}/>
       </Routes>

@@ -262,6 +262,29 @@ app.post('/getcart',fetchUser,async(req,res)=>{
     res.json(userData.cartData);
 })
 
+// creating endpoint for search data
+app.get('/search', async (req, res) => {
+    const query = req.query.q; // Extract query from request
+    if (!query || query.trim() === "") {
+        return res.status(400).json({ success: false, error: "Search query cannot be empty" });
+    }
+
+    try {
+        // Perform a case-insensitive search by name or category
+        const products = await Product.find({
+            $or: [
+                { name: { $regex: query, $options: "i" } },
+                { category: { $regex: query, $options: "i" } }
+            ]
+        });
+        res.json({ success: true, products });
+    } catch (error) {
+        console.error("Error during search:", error);
+        res.status(500).json({ success: false, error: "Internal server error" });
+    }
+});
+
+
 
 app.listen(port,(error)=>{
     if(!error){
