@@ -14,6 +14,8 @@ const ShopContextProvider = (props) => {
     const [all_product, setAll_Product] = useState([]);
     const [cartItems, setCartItems] = useState(getDefaultCart());
     const [searchResults, setSearchResults] = useState([]); 
+    const [deliveryCharge] = useState(50); // Static delivery charge
+    const [token, setToken] = useState(localStorage.getItem('auth-token') || '');
 
     // Fetch all products and cart data on component mount
     useEffect(() => {
@@ -113,6 +115,28 @@ const ShopContextProvider = (props) => {
         }
     };
 
+    /* Place order API interaction*/
+    const placeOrderAPI = async (orderData) => {
+        console.log("Order Data Sent to Backend:", orderData); // Log payload
+        try {
+            const response = await fetch("http://localhost:4000/orders", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(orderData),
+            });
+            const result = await response.json();
+            console.log("Response from Backend:", result); // Log backend response
+            return result;
+        } catch (error) {
+            console.error("Order failed:", error);
+            return { success: false };
+        }
+    };
+    
+    
+
     const contextValue = {
         getTotalCartItems,
         getTotalCartAmount,
@@ -120,8 +144,13 @@ const ShopContextProvider = (props) => {
         cartItems,
         addToCart,
         removeFromCart,
+        deliveryCharge,
         searchResults, // Expose search results
         searchProducts, // Expose search function
+        placeOrderAPI,
+        token,
+        setToken,
+        setCartItems,
     };
 
     return (

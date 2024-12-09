@@ -286,6 +286,100 @@ app.get('/search', async (req, res) => {
 
 
 
+// Order model schema
+const OrderModel = mongoose.model('Order', {
+    address: {
+        firstName: String,
+        lastName: String,
+        email: String,
+        street: String,
+        city: String,
+        state: String,
+        zipcode: String,
+        country: String,
+        phone: String,
+    },
+    items: [
+        {
+            id: Number,
+            name: String,
+            quantity: Number,
+            new_price: Number,
+        },
+    ],
+    amount: Number,
+    status: { type: String, default: 'Order Processing' }, // Default status
+    date: { type: Date, default: Date.now },
+});
+
+// Get data for orders
+app.get('/orders', async (req, res) => {
+    try {
+        const orders = await OrderModel.find(); // Ensure you're using the correct model name
+        console.log("Orders Fetched from Database:", orders); // Log fetched orders
+        res.send({ success: true, orders });
+    } catch (err) {
+        console.error("Error Fetching Orders:", err); // Log errors if any
+        res.status(500).send({ success: false, message: err.message });
+    }
+});
+
+
+
+// Creating endpoint for updating order status
+app.post('/orders', async (req, res) => {
+    try {
+        console.log("Received Order Data:", req.body); // Debug input data
+        const { address, items, amount } = req.body;
+
+        // Validate input
+        if (!address || !items || !amount) {
+            return res.status(400).json({ success: false, message: "Missing required fields" });
+        }
+
+        // Save to database
+        const newOrder = new OrderModel({
+            address,
+            items,
+            amount,
+        });
+
+        const savedOrder = await newOrder.save();
+        console.log("Order Saved:", savedOrder); // Debug saved order
+        res.status(201).json({ success: true, data: savedOrder });
+    } catch (error) {
+        console.error("Error while placing order:", error);
+        res.status(500).json({ success: false, message: "Server error", error: error.message });
+    }
+});
+
+
+app.post('/orders/update-status', async (req, res) => {
+    const { orderId, status } = req.body;
+
+    try {
+        const updatedOrder = await OrderModel.findByIdAndUpdate(
+            orderId,
+            { status },
+            { new: true }
+        );
+
+        if (!updatedOrder) {
+            return res.status(404).json({ success: false, message: 'Order not found' });
+        }
+
+        res.status(200).json({ success: true, data: updatedOrder });
+    } catch (error) {
+        console.error('Error updating order status:', error);
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
+
+
+
+
+
+
 app.listen(port,(error)=>{
     if(!error){
         console.log("Server Running on Port "+port)
